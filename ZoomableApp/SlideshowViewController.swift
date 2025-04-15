@@ -1,17 +1,24 @@
+//
+//  SlideshowViewController.swift
+//  by Phil Wright
+//  Created on 4/10/25.
+//
+
 import UIKit
 
 class SlideshowViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // Array of image names for the slideshow
-    let imageNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] // Replace with your image names
+    let imageNames = [
+        "s1L", "s2L", "s3L", "s4L", "s5L",
+        "s6L", "s7L", "s8L", "s9L", "s10L",
+        "s11L", "s12L", "s13L"
+    ]
+    
     
     // Collection View
     lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +27,15 @@ class SlideshowViewController: UIViewController, UICollectionViewDataSource, UIC
         collectionView.register(SlideshowCell.self, forCellWithReuseIdentifier: SlideshowCell.identifier)
         return collectionView
     }()
+ 
+    // Create a collection view layout
+    private func createCollectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        return layout
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
