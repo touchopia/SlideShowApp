@@ -84,18 +84,6 @@
 				5E2478802DA88C0A00934711 /* SceneDelegate.swift */,
 				5E24788E2DA88E2E00934711 /* SlideshowViewController.swift */,
 				5E24788A2DA88C5200934711 /* Extensions.swift */,
-				5ED428E32DAF0C7800637C24 /* Resources */,
-				5E24787A2DA88C0A00934711 /* Assets.xcassets */,
-				5E24787B2DA88C0A00934711 /* Info.plist */,
-				5E24787D2DA88C0A00934711 /* LaunchScreen.storyboard */,
-				5E24787F2DA88C0A00934711 /* Main.storyboard */,
-			);
-			path = ZoomableApp;
-			sourceTree = "<group>";
-		};
-		5ED428C02DAF0C7800637C24 /* audio */ = {
-			isa = PBXGroup;
-			children = (
 				5ED428B52DAF0C7800637C24 /* s1.mp3 */,
 				5ED428B62DAF0C7800637C24 /* s2.mp3 */,
 				5ED428B72DAF0C7800637C24 /* s3.mp3 */,
@@ -107,16 +95,12 @@
 				5ED428BD2DAF0C7800637C24 /* s9.mp3 */,
 				5ED428BE2DAF0C7800637C24 /* s10.mp3 */,
 				5ED428BF2DAF0C7800637C24 /* s11.mp3 */,
+				5E24787A2DA88C0A00934711 /* Assets.xcassets */,
+				5E24787B2DA88C0A00934711 /* Info.plist */,
+				5E24787D2DA88C0A00934711 /* LaunchScreen.storyboard */,
+				5E24787F2DA88C0A00934711 /* Main.storyboard */,
 			);
-			path = audio;
-			sourceTree = "<group>";
-		};
-		5ED428E32DAF0C7800637C24 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5ED428C02DAF0C7800637C24 /* audio */,
-			);
-			path = Resources;
+			path = ZoomableApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

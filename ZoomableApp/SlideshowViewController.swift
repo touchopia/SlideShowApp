@@ -5,20 +5,42 @@
 //
 
 import UIKit
+import AVFoundation
+
+// Slide item model to pair images with audio
+struct SlideItem {
+    let imageName: String
+    let audioFileName: String
+}
 
 class SlideshowViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    // Array of image names for the slideshow
-    let imageNames = [
-        "s1L", "s2L", "s3L", "s4L", "s5L",
-        "s6L", "s7L", "s8L", "s9L", "s10L",
-        "s11L", "s12L", "s13L"
+    // Array of slide items containing both image and audio references
+    let slideItems: [SlideItem] = [
+        SlideItem(imageName: "s1L", audioFileName: "s1"),
+        SlideItem(imageName: "s2L", audioFileName: "s2"),
+        SlideItem(imageName: "s3L", audioFileName: "s3"),
+        SlideItem(imageName: "s4L", audioFileName: "s4"),
+        SlideItem(imageName: "s5L", audioFileName: "s5"),
+        SlideItem(imageName: "s6L", audioFileName: "s6"),
+        SlideItem(imageName: "s7L", audioFileName: "s7"),
+        SlideItem(imageName: "s8L", audioFileName: "s8"),
+        SlideItem(imageName: "s9L", audioFileName: "s9"),
     ]
     
+    // Audio player
+    private var audioPlayer: AVAudioPlayer?
+    
+    // Track the current visible slide
+    private var currentVisibleIndex: Int = 0
     
     // Collection View
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,20 +49,17 @@ class SlideshowViewController: UIViewController, UICollectionViewDataSource, UIC
         collectionView.register(SlideshowCell.self, forCellWithReuseIdentifier: SlideshowCell.identifier)
         return collectionView
     }()
- 
-    // Create a collection view layout
-    private func createCollectionViewLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        return layout
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupCollectionView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Play audio for the first slide when view appears
+        playAudioForCurrentSlide()
     }
     
     // Setup collection view constraints
@@ -53,19 +72,44 @@ class SlideshowViewController: UIViewController, UICollectionViewDataSource, UIC
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+    // Play audio for the current slide
+    private func playAudioForCurrentSlide() {
+        // Stop any currently playing audio
+        audioPlayer?.stop()
+        
+        // Get the audio file name for the current slide
+        let audioFileName = slideItems[currentVisibleIndex].audioFileName
+        
+        // Path to audio file in project resources
+        if let audioPath = Bundle.main.path(forResource: "\(audioFileName)", ofType: "mp3") {
+            let audioURL = URL(fileURLWithPath: audioPath)
+            
+            do {
+                // Initialize and play the audio
+                audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
+                audioPlayer?.prepareToPlay()
+                audioPlayer?.play()
+            } catch {
+                print("Error playing audio file: \(error.localizedDescription)")
+            }
+        } else {
+            print("Audio file not found: /resources/audio/\(audioFileName).mp3")
+        }
+    }
 
     // MARK: - UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageNames.count
+        return slideItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlideshowCell.identifier, for: indexPath) as? SlideshowCell else {
             fatalError("Unable to dequeue SlideshowCell")
         }
-        let imageName = imageNames[indexPath.item]
-        cell.configure(with: imageName)
+        let slideItem = slideItems[indexPath.item]
+        cell.configure(with: slideItem.imageName)
         return cell
     }
 
@@ -73,6 +117,20 @@ class SlideshowViewController: UIViewController, UICollectionViewDataSource, UIC
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // Calculate which page is currently visible after scrolling stops
+        let pageWidth = scrollView.frame.size.width
+        let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
+        
+        // Update current index and play audio if it's a different slide
+        if currentVisibleIndex != page && page >= 0 && page < slideItems.count {
+            currentVisibleIndex = page
+            playAudioForCurrentSlide()
+        }
     }
 }
 
