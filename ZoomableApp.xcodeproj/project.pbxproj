@@ -14,17 +14,6 @@
 		5E2478892DA88C0A00934711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E24787F2DA88C0A00934711 /* Main.storyboard */; };
 		5E24788B2DA88C5200934711 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E24788A2DA88C5200934711 /* Extensions.swift */; };
 		5E24788F2DA88E2E00934711 /* SlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E24788E2DA88E2E00934711 /* SlideshowViewController.swift */; };
-		5ED428EE2DAF0C7800637C24 /* s7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428BB2DAF0C7800637C24 /* s7.mp3 */; };
-		5ED428F12DAF0C7800637C24 /* s11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428BF2DAF0C7800637C24 /* s11.mp3 */; };
-		5ED428F72DAF0C7800637C24 /* s1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428B52DAF0C7800637C24 /* s1.mp3 */; };
-		5ED428FA2DAF0C7800637C24 /* s6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428BA2DAF0C7800637C24 /* s6.mp3 */; };
-		5ED428FE2DAF0C7800637C24 /* s8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428BC2DAF0C7800637C24 /* s8.mp3 */; };
-		5ED428FF2DAF0C7800637C24 /* s5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428B92DAF0C7800637C24 /* s5.mp3 */; };
-		5ED429032DAF0C7800637C24 /* s9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428BD2DAF0C7800637C24 /* s9.mp3 */; };
-		5ED429042DAF0C7800637C24 /* s10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428BE2DAF0C7800637C24 /* s10.mp3 */; };
-		5ED429062DAF0C7800637C24 /* s3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428B72DAF0C7800637C24 /* s3.mp3 */; };
-		5ED429092DAF0C7800637C24 /* s2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428B62DAF0C7800637C24 /* s2.mp3 */; };
-		5ED4290E2DAF0C7800637C24 /* s4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ED428B82DAF0C7800637C24 /* s4.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,18 +26,15 @@
 		5E2478802DA88C0A00934711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5E24788A2DA88C5200934711 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5E24788E2DA88E2E00934711 /* SlideshowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowViewController.swift; sourceTree = "<group>"; };
-		5ED428B52DAF0C7800637C24 /* s1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s1.mp3; sourceTree = "<group>"; };
-		5ED428B62DAF0C7800637C24 /* s2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s2.mp3; sourceTree = "<group>"; };
-		5ED428B72DAF0C7800637C24 /* s3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s3.mp3; sourceTree = "<group>"; };
-		5ED428B82DAF0C7800637C24 /* s4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s4.mp3; sourceTree = "<group>"; };
-		5ED428B92DAF0C7800637C24 /* s5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s5.mp3; sourceTree = "<group>"; };
-		5ED428BA2DAF0C7800637C24 /* s6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s6.mp3; sourceTree = "<group>"; };
-		5ED428BB2DAF0C7800637C24 /* s7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s7.mp3; sourceTree = "<group>"; };
-		5ED428BC2DAF0C7800637C24 /* s8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s8.mp3; sourceTree = "<group>"; };
-		5ED428BD2DAF0C7800637C24 /* s9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s9.mp3; sourceTree = "<group>"; };
-		5ED428BE2DAF0C7800637C24 /* s10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s10.mp3; sourceTree = "<group>"; };
-		5ED428BF2DAF0C7800637C24 /* s11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = s11.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5EC8663C2DB0077E0085D39A /* resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = resources;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5E24785E2DA88BBD00934711 /* Frameworks */ = {
@@ -84,17 +70,7 @@
 				5E2478802DA88C0A00934711 /* SceneDelegate.swift */,
 				5E24788E2DA88E2E00934711 /* SlideshowViewController.swift */,
 				5E24788A2DA88C5200934711 /* Extensions.swift */,
-				5ED428B52DAF0C7800637C24 /* s1.mp3 */,
-				5ED428B62DAF0C7800637C24 /* s2.mp3 */,
-				5ED428B72DAF0C7800637C24 /* s3.mp3 */,
-				5ED428B82DAF0C7800637C24 /* s4.mp3 */,
-				5ED428B92DAF0C7800637C24 /* s5.mp3 */,
-				5ED428BA2DAF0C7800637C24 /* s6.mp3 */,
-				5ED428BB2DAF0C7800637C24 /* s7.mp3 */,
-				5ED428BC2DAF0C7800637C24 /* s8.mp3 */,
-				5ED428BD2DAF0C7800637C24 /* s9.mp3 */,
-				5ED428BE2DAF0C7800637C24 /* s10.mp3 */,
-				5ED428BF2DAF0C7800637C24 /* s11.mp3 */,
+				5EC8663C2DB0077E0085D39A /* resources */,
 				5E24787A2DA88C0A00934711 /* Assets.xcassets */,
 				5E24787B2DA88C0A00934711 /* Info.plist */,
 				5E24787D2DA88C0A00934711 /* LaunchScreen.storyboard */,
@@ -117,6 +93,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5EC8663C2DB0077E0085D39A /* resources */,
 			);
 			name = ZoomableApp;
 			packageProductDependencies = (
@@ -165,17 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2478862DA88C0A00934711 /* Assets.xcassets in Resources */,
-				5ED428EE2DAF0C7800637C24 /* s7.mp3 in Resources */,
-				5ED428F12DAF0C7800637C24 /* s11.mp3 in Resources */,
-				5ED428F72DAF0C7800637C24 /* s1.mp3 in Resources */,
-				5ED428FA2DAF0C7800637C24 /* s6.mp3 in Resources */,
-				5ED428FE2DAF0C7800637C24 /* s8.mp3 in Resources */,
-				5ED428FF2DAF0C7800637C24 /* s5.mp3 in Resources */,
-				5ED429032DAF0C7800637C24 /* s9.mp3 in Resources */,
-				5ED429042DAF0C7800637C24 /* s10.mp3 in Resources */,
-				5ED429062DAF0C7800637C24 /* s3.mp3 in Resources */,
-				5ED429092DAF0C7800637C24 /* s2.mp3 in Resources */,
-				5ED4290E2DAF0C7800637C24 /* s4.mp3 in Resources */,
 				5E2478882DA88C0A00934711 /* LaunchScreen.storyboard in Resources */,
 				5E2478892DA88C0A00934711 /* Main.storyboard in Resources */,
 			);
